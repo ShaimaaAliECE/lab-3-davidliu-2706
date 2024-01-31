@@ -18,9 +18,11 @@ namespace Lab3App
         public void UpdateTotalValue() 
         {
             Board.TotalValue += this.Value;
+            Console.WriteLine("Total Value is updated to: " + Board.TotalValue);
+
         }
 
-       public override void Display()
+        public override void Display()
         {
             Console.WriteLine("Coin "+this.getDescription()+" is displayed");
         }
@@ -28,6 +30,8 @@ namespace Lab3App
         public override void AddMe(List<Collectable> l)
         {
             base.AddMe(l);
+           UpdateTotalValue();
         }
+
     }
 }
